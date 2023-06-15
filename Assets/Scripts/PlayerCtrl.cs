@@ -88,7 +88,7 @@ public class PlayerCtrl : MonoBehaviour
                 _shieldEffect.transform.position = cp.point;
                 if (isJump)
                 {
-                    rigid.gravityScale = 10;
+                    rigid.gravityScale = 2;
                 }
             }
             else //사용 후
@@ -110,7 +110,7 @@ public class PlayerCtrl : MonoBehaviour
             GameObject _groundEffect = Instantiate(groundEffect);
             _groundEffect.transform.position = v;
 
-            rigid.gravityScale = 1;
+            rigid.gravityScale = 0.7f;
 
             //Idle 애니메이션
             anim.SetInteger("AttackType", 0);
