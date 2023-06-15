@@ -7,14 +7,15 @@ public class MonsterGenerator : MonoBehaviour
     public List<GameObject> monster;
     public Transform spawnPos;
 
-    public float spawnTime = 0.01f;
-    public float levelTime = 10;
+    public float spawnTime = 0.01f; //같은 몬스터 스폰 시간
+    public float levelTime = 10; //몬스터 종류 스폰 시간
     void Start()
     {
         StartCoroutine(Spawn());
 
     }
 
+    //몬스터 스폰
     IEnumerator Spawn()
     {
         for (int i = 0; i < monster.Count; i++)

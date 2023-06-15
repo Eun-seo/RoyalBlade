@@ -10,8 +10,10 @@ public class PlayerCtrl : MonoBehaviour
     public Image jumpGauge;
     public Image shieldGauge;
     public Image attackGauge;
+
     public GameObject jumpSkill;
     public GameObject attackSkill;
+
     public GameObject shieldEffect;
     public GameObject groundEffect;
 
@@ -28,8 +30,7 @@ public class PlayerCtrl : MonoBehaviour
     //점프 버튼
     public void Jump()
     {
-        Debug.Log("Jump : " + isJump);
-        if (!isJump)
+        if (!isJump) // 점프 한번만
         {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             jumpGauge.fillAmount += 0.34f;
@@ -117,6 +118,7 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
+    //쉴드 쿨타임
     IEnumerator ShieldGauge()
     {
         while(true)
