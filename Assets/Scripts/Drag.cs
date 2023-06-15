@@ -16,10 +16,12 @@ public class Drag : MonoBehaviour,IEndDragHandler,IDragHandler
 
     private RectTransform rt;
     private float jumpPower = 20;
+
     private void Awake()
     {
         rt = this.GetComponent<RectTransform>();
     }
+
     public void OnDrag(PointerEventData eventData)
     {
         Vector2 curPos = rt.anchoredPosition;
@@ -27,7 +29,6 @@ public class Drag : MonoBehaviour,IEndDragHandler,IDragHandler
         if(curPos.y >= 200 && curPos.y <= 700)
         {
             rt.anchoredPosition = curPos;
-
         }
     }
 

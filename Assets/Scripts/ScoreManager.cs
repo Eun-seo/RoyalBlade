@@ -27,8 +27,6 @@ public class ScoreManager : MonoBehaviour
     //Á¡¼ö
     public TextMeshProUGUI txtScore;
 
-    
-
     private TextMeshProUGUI damageText;
     private Animator comboAnim;
 
@@ -44,6 +42,7 @@ public class ScoreManager : MonoBehaviour
 
         damageText = damageObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         comboAnim = txtCombo.gameObject.GetComponent<Animator>();
+
         txtCoin.text = coin.ToString();
         txtScore.text = score.ToString();
     }

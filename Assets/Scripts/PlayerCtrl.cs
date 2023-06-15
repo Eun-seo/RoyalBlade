@@ -13,6 +13,7 @@ public class PlayerCtrl : MonoBehaviour
     public GameObject jumpSkill;
     public GameObject attackSkill;
     public GameObject shieldEffect;
+    public GameObject groundEffect;
 
     private Rigidbody2D rigid;
     private bool isJump = false;
@@ -81,7 +82,7 @@ public class PlayerCtrl : MonoBehaviour
                 StartCoroutine(ShieldGauge());
                 ContactPoint2D cp =  coll.contacts[0];
 
-                //È¿°ú
+                //½¯µå È¿°ú
                 GameObject _shieldEffect =  Instantiate(shieldEffect);
                 _shieldEffect.transform.position = cp.point;
                 if (isJump)
@@ -101,6 +102,12 @@ public class PlayerCtrl : MonoBehaviour
         {
             isJump = false;
             Debug.Log("Jump : " + isJump);
+            ContactPoint2D cp = coll.contacts[0];
+            Vector2 v = cp.point;
+            v.x = 0;
+            //ÂøÁö È¿°ú
+            GameObject _groundEffect = Instantiate(groundEffect);
+            _groundEffect.transform.position = v;
 
             rigid.gravityScale = 1;
 
